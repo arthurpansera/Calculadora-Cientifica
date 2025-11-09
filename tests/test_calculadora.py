@@ -15,14 +15,14 @@ def test_multiplicacao():
 def test_divisao():
     assert calc.divisao(20, 5) == 4
 
-def test_potencia():
+def test_potenciacao():
     assert calc.potenciacao(2, 3) == 8
 
 def test_raiz_quadrada():
     assert calc.raiz_quadrada(25) == 5
 
 def test_seno():
-    assert round(calc.seno(90), 2) == 1.00
+    assert round(calc.seno(90), 2) == 1.0
 
 def test_cosseno():
-    assert round(calc.cosseno(0), 2) == 1.00
+    assert round(calc.cosseno(0), 2) == 1.0

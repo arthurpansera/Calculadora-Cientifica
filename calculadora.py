@@ -11,19 +11,17 @@ class Calculadora:
         return a * b
 
     def divisao(self, a, b):
-        if b != 0:
-            return a / b
-        else:
-            return "Não é possível dividir por zero!"
+        if b == 0:
+            raise ZeroDivisionError("Não é possível dividir por zero!")
+        return a / b
 
     def potenciacao(self, a, b):
         return a ** b
 
     def raiz_quadrada(self, a):
-        if a >= 0:
-            return math.sqrt(a)
-        else:
-            return "Número negativo não possui raiz real!"
+        if a < 0:
+            raise ValueError("Número negativo não possui raiz real!")
+        return math.sqrt(a)
 
     def seno(self, angulo_graus):
         return math.sin(math.radians(angulo_graus))

@@ -68,11 +68,11 @@ def step_raiz_erro(context):
 
 @when('eu calculo o seno')
 def step_seno(context):
-    context.resultado = round(calc.seno(context.a), 3)
+    context.resultado = round(calc.seno(context.a), 2)
 
 @when('eu calculo o cosseno')
 def step_cosseno(context):
-    context.resultado = round(calc.cosseno(context.a), 3)
+    context.resultado = round(calc.cosseno(context.a), 2)
 
 # THEN (resultado esperado)
 

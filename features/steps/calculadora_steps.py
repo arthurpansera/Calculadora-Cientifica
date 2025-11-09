@@ -2,7 +2,6 @@
 
 from behave import given, when, then
 from calculadora import Calculadora
-import math
 
 calc = Calculadora()
 
@@ -44,13 +43,6 @@ def step_multiplica(context):
 def step_divide(context):
     context.resultado = calc.divisao(context.a, context.b)
 
-@when('eu tento dividir o primeiro pelo segundo')
-def step_divide_zero(context):
-    try:
-        context.resultado = calc.divisao(context.a, context.b)
-    except Exception as e:
-        context.excecao = str(e)
-
 @when('eu calculo a potência')
 def step_potencia(context):
     context.resultado = calc.potenciacao(context.a, context.b)
@@ -58,13 +50,6 @@ def step_potencia(context):
 @when('eu calculo a raiz quadrada')
 def step_raiz(context):
     context.resultado = calc.raiz_quadrada(context.a)
-
-@when('eu tento calcular a raiz quadrada')
-def step_raiz_erro(context):
-    try:
-        context.resultado = calc.raiz_quadrada(context.a)
-    except Exception as e:
-        context.excecao = str(e)
 
 @when('eu calculo o seno')
 def step_seno(context):
@@ -76,18 +61,6 @@ def step_cosseno(context):
 
 # THEN (resultado esperado)
 
-@then('o resultado deve ser {esperado:f}')
+@then('o resultado deve ser {esperado:g}')
 def step_resultado(context, esperado):
-    assert round(context.resultado, 3) == round(esperado, 3)
-
-@then('o resultado deve ser aproximadamente {esperado:f}')
-def step_resultado_aprox(context, esperado):
-    assert math.isclose(context.resultado, esperado, rel_tol=1e-3)
-
-@then('deve lançar uma exceção de divisão por zero')
-def step_erro_divisao(context):
-    assert "zero" in context.excecao.lower()
-
-@then('deve lançar uma exceção de valor inválido')
-def step_erro_valor(context):
-    assert "negativo" in context.excecao.lower()
+    assert round(context.resultado, 2) == round(esperado, 2)

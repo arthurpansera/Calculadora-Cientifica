@@ -1,4 +1,3 @@
-import math
 from calculadora import Calculadora
 
 calc = Calculadora()

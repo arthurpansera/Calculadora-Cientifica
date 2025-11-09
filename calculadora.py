@@ -1,32 +1,32 @@
 import math
 
 class Calculadora:
-    def soma(a, b):
+    def soma(self, a, b):
         return a + b
 
-    def subtracao(a, b):
+    def subtracao(self, a, b):
         return a - b
 
-    def multiplicacao(a, b):
+    def multiplicacao(self, a, b):
         return a * b
 
-    def divisao(a, b):
+    def divisao(self, a, b):
         if b != 0:
             return a / b
         else:
             return "Não é possível dividir por zero!"
 
-    def potenciacao(a, b):
+    def potenciacao(self, a, b):
         return a ** b
 
-    def raiz_quadrada(a):
-        if a > 0:
+    def raiz_quadrada(self, a):
+        if a >= 0:
             return math.sqrt(a)
         else:
             return "Número negativo não possui raiz real!"
 
-    def seno(angulo_graus):
+    def seno(self, angulo_graus):
         return math.sin(math.radians(angulo_graus))
 
-    def cosseno(angulo_graus):
+    def cosseno(self, angulo_graus):
         return math.cos(math.radians(angulo_graus))
